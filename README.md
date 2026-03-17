@@ -1,2 +1,181 @@
-# Iftar-17-March-2026
-iftarrrr
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ultimate Iftar Party 2026</title>
+    <link href="https://fonts.googleapis.com/css2?family=Amiri&family=Orbitron:wght@500&family=Hind+Siliguri:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #080b12;
+            --card-bg: rgba(255, 255, 255, 0.05);
+            --neon-1: #00f2ff;
+            --neon-2: #7000ff;
+            --neon-3: #ff00c1;
+        }
+
+        body {
+            margin: 0; padding: 0;
+            background: var(--bg);
+            background: radial-gradient(circle at center, #1a1c2c 0%, #080b12 100%);
+            color: white;
+            font-family: 'Hind Siliguri', sans-serif;
+            display: flex; flex-direction: column; align-items: center;
+            min-height: 100vh; overflow: hidden;
+        }
+
+        .bismillah {
+            font-family: 'Amiri', serif; font-size: 2.2rem;
+            margin-top: 20px; color: #ffd700;
+            filter: drop-shadow(0 0 10px #ffd700);
+        }
+
+        .dashboard {
+            display: grid; grid-template-columns: 1fr; gap: 20px;
+            width: 90%; max-width: 450px; margin-top: 20px;
+        }
+
+        .glass-card {
+            background: var(--card-bg);
+            backdrop-filter: blur(15px);
+            border-radius: 20px; padding: 20px;
+            text-align: center; border: 1px solid rgba(255,255,255,0.1);
+            position: relative; overflow: hidden;
+        }
+
+        .card-live { border-left: 5px solid var(--neon-1); box-shadow: -10px 0 20px -10px var(--neon-1); }
+        .card-report { border-left: 5px solid var(--neon-2); box-shadow: -10px 0 20px -10px var(--neon-2); }
+        .card-iftar { border-left: 5px solid var(--neon-3); box-shadow: -10px 0 20px -10px var(--neon-3); }
+
+        .label { font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px; color: #aaa; }
+        .time-text { font-family: 'Orbitron', sans-serif; font-size: 1.8rem; margin: 10px 0; color: #fff; }
+
+        #warning-box {
+            position: fixed; top: 20px; right: -320px;
+            width: 260px; background: rgba(255, 0, 0, 0.95);
+            color: white; padding: 15px; border-radius: 12px;
+            border: 2px solid yellow; z-index: 1000;
+            transition: right 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            font-size: 0.85rem; font-weight: bold;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        }
+
+        #warning-box.show { right: 20px; }
+
+        .headline-container {
+            position: fixed; bottom: 0; width: 100%;
+            background: linear-gradient(90deg, transparent, rgba(112, 0, 255, 0.2), transparent);
+            border-top: 1px solid var(--neon-2); padding: 12px 0;
+            z-index: 10;
+        }
+
+        .headline-scroll {
+            white-space: nowrap; display: inline-block;
+            animation: slowScroll 50s linear infinite;
+            font-size: 1.05rem; color: #e0e0e0;
+        }
+
+        @keyframes slowScroll {
+            0% { transform: translateX(100vw); }
+            100% { transform: translateX(-100%); }
+        }
+
+        .footer { margin-top: 25px; font-size: 0.75rem; opacity: 0.6; padding-bottom: 80px; text-align: center;}
+        .highlight { color: var(--neon-1); }
+
+        @media (max-width: 400px) {
+            .time-text { font-size: 1.4rem; }
+            .bismillah { font-size: 1.8rem; }
+        }
+    </style>
+</head>
+<body>
+
+<div id="warning-box">
+    ⚠️ <b>জরুরী ঘোষণা:</b> <br>
+    এই কোডের মেকার বাদে সবাইকে <b>দুপুর ৩টার</b> মধ্যে উপস্থিত থাকতে বলা হলো!
+</div>
+
+<div class="bismillah">بِسْمِ اللهِ الرَّحْمٰنِ الرَّحِيْمِ</div>
+
+<div class="dashboard">
+    <div class="glass-card card-live">
+        <span class="label">● Live Current Time</span>
+        <div id="clock" class="time-text">00:00:00</div>
+    </div>
+
+    <div class="glass-card card-report">
+        <span class="label">📍 মধ্যে উপস্থিত Reporting: 03:00 PM</span>
+        <div id="report-cd" class="time-text" style="color: var(--neon-2);">00h 00m 00s</div>
+    </div>
+
+    <div class="glass-card card-iftar">
+        <span class="label">🌙 Iftar: 06:12 PM</span>
+        <div id="iftar-cd" class="time-text" style="color: var(--neon-3); font-size: 2.2rem;">00:00:00</div>
+        <div class="label">ইফতারের বাকি আর মাত্র</div>
+    </div>
+</div>
+
+<div class="footer">
+    সার্বিক আয়োজন: <b>Md Mehedi Hasan</b> <br>
+    Design by: <span class="highlight">Md MH Tamim</span>
+</div>
+
+<div class="headline-container">
+    <div class="headline-scroll">
+        🔥 <span style="color:var(--neon-1)">নোটিশ:</span> সময় থাকলে দেখো / উক্ত ইফতার পার্টিতে উপস্থিত থাকবেন 
+        <b>Abid Sadik (BAU)</b>, <b>Rubaiyat Raj (DIU)</b>, <b>Md Walid Binte Ali (Civil)</b>, <b>Nur ALom (NSU)</b>, <b>Hero (Pharma)</b>, 
+        <b>Md Maruf (1xbet Founder)</b>, <b>Aminul & Sadhin (Bussiness)</b>, <b>Sohel (Netabangla)</b>, <b>Sohel Rana (Army)</b>, 
+        <b>Ripon Sarkar (Auto Crops)</b>, <b>Alamin (Shibir)</b>, <b>Sohag Daduu (BMP)</b>, <b>Fuwad Rana (MP Grandson)</b>, 
+        <b>Sowrob Enge</b>, <b>MMMammma Group</b>, 
+        <span style="color: #2ecc71; font-weight: bold;">Md Mehedi Hasan (EEE)</span> এবং 
+        <span style="color: #ff4d4d; font-weight: bold;">Md Mahadi Hasan Tamim</span> (সেকেন্ড টাইম দিয়াও কোথাও চান্স পায় নাই)। 
+        সবাই সময়মতো চলে আসবেন! শুধু আসার ট্রাই করবেন।। RIP Master er jamai & Faruker Jamai 🌙
+    </div>
+</div>
+
+<script>
+    function updateEngine() {
+        const now = new Date();
+        document.getElementById('clock').innerText = now.toLocaleTimeString('en-US', { hour12: true, hour: '2-digit', minute: '2-digit', second: '2-digit' });
+
+        const reportTime = new Date();
+        reportTime.setHours(15, 0, 0, 0);
+        let diff1 = reportTime - now;
+        if(diff1 > 0) {
+            const h = Math.floor(diff1 / 3600000);
+            const m = Math.floor((diff1 % 3600000) / 60000);
+            const s = Math.floor((diff1 % 60000) / 1000);
+            document.getElementById('report-cd').innerText = `${h}h ${m}m ${s}s`;
+        } else {
+            document.getElementById('report-cd').innerText = "টাইম ওভার!";
+        }
+
+        const iftarTime = new Date();
+        iftarTime.setHours(18, 12, 0, 0);
+        let diff2 = iftarTime - now;
+        if(diff2 > 0) {
+            const h = Math.floor(diff2 / 3600000);
+            const m = Math.floor((diff2 % 3600000) / 60000);
+            const s = Math.floor((diff2 % 60000) / 1000);
+            document.getElementById('iftar-cd').innerText = 
+                `${h.toString().padStart(2,'0')}:${m.toString().padStart(2,'0')}:${s.toString().padStart(2,'0')}`;
+        } else {
+            document.getElementById('iftar-cd').innerText = "ইফতার টাইম!";
+        }
+    }
+
+    setInterval(() => {
+        const box = document.getElementById('warning-box');
+        box.classList.add('show');
+        setTimeout(() => {
+            box.classList.remove('show');
+        }, 5000);
+    }, 10000);
+
+    setInterval(updateEngine, 1000);
+    updateEngine();
+</script>
+
+</body>
+</html>
